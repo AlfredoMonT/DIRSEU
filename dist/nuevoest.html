@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Estudiante</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="estilos/nuevoest.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Sidebar / Menu Lateral -->
+        <div id="sidebar">
+            <div class="menu-icon">
+                <i class="fas fa-user"></i>
+                <p>Docente</p>
+            </div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div id="main-content">
+            <header>
+                <h1 class="title">Registrar Nuevo Estudiante</h1>
+                <button id="cerrar-sesion" onclick="window.location.href='logout.php'">Cerrar Sesión</button>
+            </header>
+
+            <h2>Nuevo Estudiante</h2>
+
+            <!-- Formulario para registrar un alumno -->
+            <form action="./controlador/registroalumno.php" method="post">
+                <label for="nombreAlumno">Nombres:</label>
+                <input type="text" id="nombreAlumno" name="nombreAlumno" required>
+
+                <label for="apellidoAlumno">Apellidos:</label>
+                <input type="text" id="apellidoAlumno" name="apellidoAlumno" required>
+
+                <label for="correoAlumno">Correo:</label>
+                <input type="email" id="correoAlumno" name="correoAlumno" required>
+
+                <label for="generoAlumno">Género:</label>
+                <select id="generoAlumno" name="generoAlumno" required>
+                    <option value="" disabled selected>Seleccionar Género</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                </select>
+
+                <label for="celularAlumno">Celular:</label>
+                <input type="text" id="celularAlumno" name="celularAlumno" required>
+
+                <label for="taller">Taller a Escoger:</label>
+                <select name="idTaller" id="taller" required>
+                    <option value="" disabled selected>Selecciona el taller</option>
+                    <option value="1">DANZA FOLKLÓRICA</option>
+                    <option value="2">DANZA MODERNA</option>
+                    <option value="3">RITMO Y CONEXIÓN</option>
+                    <option value="4">CORO</option>
+                    <option value="5">TEATRO</option>
+                    <option value="6">TUNA UNIVERSITARIA</option>
+                    <option value="7">TUNA UNIVERSITARIA FEMENINA</option>
+                    <option value="8">GRÁFICA Y ARTES VISUALES</option>
+                    <option value="9">DANZA FOLKLÓRICA (Segunda edición)</option>
+                </select>
+                
+                <label for="facultad">Facultad:</label>
+                <select id="facultad" name="facultad" required onchange="cargarEscuelas()">
+                    <option value="" disabled selected>Seleccionar Facultad</option>
+                    <option value="Derecho">Derecho y Ciencia Política</option>
+                    <option value="Ingenieria">Ingeniería y Arquitectura</option>
+                    <option value="Economicas">Ciencias Económicas, Administrativas y Contables</option>
+                    <option value="Salud">Ciencias de la Salud</option>
+                    <option value="Humanidades">Ciencias y Humanidades</option>
+                </select>
+
+                <label for="escuela">Escuela Profesional:</label>
+                <select id="escuela" name="escuela" required>
+                    <option value="" disabled selected>Seleccionar Escuela</option>
+                    <!-- Las opciones se llenarán dinámicamente con JS -->
+                </select>
+
+                <div class="buttons">
+                    <button type="submit" class="save-btn">GUARDAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript para manejar el cambio de las opciones de Escuela Profesional -->
+    <script>
+        function cargarEscuelas() {
+            var facultad = document.getElementById('facultad').value;
+            var escuelaSelect = document.getElementById('escuela');
+            var opciones = [];
+
+            escuelaSelect.innerHTML = '<option value="" disabled selected>Seleccionar Escuela</option>';
+
+            if (facultad === "Derecho") {
+                opciones = ["Derecho"];
+            } else if (facultad === "Ingenieria") {
+                opciones = [
+                    "Arquitectura", 
+                    "Ingeniería Ambiental", 
+                    "Ingeniería Civil", 
+                    "Ingeniería Industrial", 
+                    "Ingeniería de Sistemas"
+                ];
+            } else if (facultad === "Economicas") {
+                opciones = [
+                    "Administración", 
+                    "Contabilidad", 
+                    "Administración de Negocios Internacionales", 
+                    "Economía", 
+                    "Finanzas", 
+                    "Marketing"
+                ];
+            } else if (facultad === "Salud") {
+                opciones = [
+                    "Enfermería", 
+                    "Estomatología", 
+                    "Obstetricia", 
+                    "Medicina Humana", 
+                    "Psicología", 
+                    "Tecnología Médica"
+                ];
+            } else if (facultad === "Humanidades") {
+                opciones = ["Educación", "Turismo"];
+            }
+
+            for (var i = 0; i < opciones.length; i++) {
+                var option = document.createElement("option");
+                option.value = opciones[i];
+                option.textContent = opciones[i];
+                escuelaSelect.appendChild(option);
+            }
+        }
+    </script>
+
+</body>
+</html>

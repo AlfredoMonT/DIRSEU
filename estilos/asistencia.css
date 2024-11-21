@@ -1,0 +1,154 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #00214D;
+    color: white;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #00214D;
+    width: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile .icon {
+    width: 80px;
+    height: 80px;
+    background-color: #fcfcfc;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile p {
+    margin: 0;
+    color: white;
+    font-size: 18px;
+}
+
+/* Save button */
+.save-button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.cerrar_sesion{
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+
+}
+
+/* Main content */
+main {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #dedeed;
+    color: black;
+}
+
+.event-details {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #00214D;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #00214D;
+}
+
+/* Attendance Table */
+.attendance table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attendance th, .attendance td {
+    border: 1px solid #dddddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.attendance th {
+    background-color: #00214D;
+    color: white;
+}
+
+.attendance td input {
+    padding: 5px;
+}
+
+.attendance button {
+    padding: 5px 10px;
+    margin: 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.asistio {
+    background-color: #e19819;
+}
+
+.no-asistio {
+    background-color: #dc3545;
+}
+
+.editar {
+    background-color: #e19819;
+}
+
+.eliminar {
+    background-color: #dc3545;
+}
+.editar{
+    border: solid;
+    text-decoration: none;
+    border-radius: 10%;
+    color: #00214D;
+    background-color: #fcfcfc;
+}

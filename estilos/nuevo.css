@@ -1,0 +1,167 @@
+/* Reset y Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: row; /* Cambia a fila para permitir flexibilidad */
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Ocupa todo el espacio disponible */
+}
+
+/* Estilos del Sidebar */
+#sidebar {
+    width: 200px;
+    height: 100%;
+    background-color: #002e5d;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sidebar .menu-icon {
+    color: white;
+    font-size: 69px;
+    margin-bottom: 10px;
+}
+
+#sidebar p {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+#sidebar a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 10px 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+#sidebar a:hover {
+    background-color: #005b99;
+    border-radius: 8px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: white;
+    margin-left: 20px; /* Espacio entre el sidebar y el contenido principal */
+}
+
+/* Estilos para títulos */
+h1 {
+    color: #110379;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos del formulario */
+.form-group, .form-group-inline {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-group label {
+    flex: 0 0 100px; /* Ajuste para tamaños de pantalla pequeños */
+}
+
+.form-group input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+.table-container {
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 5px;
+    text-align: center;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+button {
+    background-color: #012a63;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.save-btn {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #071c97;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100px; /* Reducir el ancho del sidebar en pantallas pequeñas */
+    }
+
+    .main-content {
+        margin-left: 10px; /* Reducir el margen en pantallas pequeñas */
+    }
+
+    .form-group label {
+        flex: 0 0 80px; /* Ajustar etiquetas */
+    }
+
+    h1 {
+        font-size: 20px; /* Ajustar tamaño de fuente en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    #sidebar {
+        display: none; /* Ocultar sidebar en pantallas muy pequeñas */
+    }
+
+    .main-content {
+        margin-left: 0; /* Sin margen cuando el sidebar está oculto */
+        padding: 10px; /* Reducir padding */
+    }
+
+    h1 {
+        font-size: 18px; /* Ajustar aún más el tamaño de fuente */
+    }
+
+    .form-group {
+        flex-direction: column; /* Apilar elementos del formulario */
+        align-items: flex-start; /* Alinear a la izquierda */
+    }
+
+    .form-group label {
+        margin-bottom: 5px; /* Espaciado entre etiqueta y input */
+    }
+}

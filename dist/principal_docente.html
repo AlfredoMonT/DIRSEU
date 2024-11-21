@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="estilos/eventos.css">
+    <title>Elenco de Danza Folklórica - UAC</title>
+</head>
+
+<body>
+    <div id="sidebar">
+        <div class="menu-icon" style="text-align: center;">
+            <i class="fas fa-user" style="font-size: 100px;"></i>
+            <p>Docente</p>
+            <button id="registrar_alumnos" onclick="window.location.href='nuevoest.html'">Registrar Alumno</button>
+            <button id="lista_alumnos" onclick="window.location.href='controlador/listar_alumnos.php'">Lista de Alumnos</button>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <header>
+            <div></div>
+            <div>
+                <button id="cerrar_sesion"><a href="index.html">Cerrar Sesión</a></button>
+            </div>
+        </header>
+
+        <!-------------------------------------------------------------------------->
+
+        <div class="tittle2">
+            <h1 id="tittle_danza">ELENCO DE DANZA FOLKLÓRICA - UAC</h1>
+            <h2>Eventos</h2>
+        </div>
+
+        <!-------------------------------------------------->
+        
+        <div class="eventos">
+            
+            <a class="add-new" onclick="window.location.href='nuevoevento.html'">
+                <span>Agregar Nuevo Evento</span>
+            </a>
+            <div id="eventos-container" class="eventos-lista"></div>
+        </div>
+
+        <!-------------------------------------------------------------------------->
+        
+        <div class="tittle2">
+            <h2>Ensayos</h2>
+        </div>
+
+        <!-------------------------------------------------->
+
+        <div class="ensayos">
+            <a class="add-new" onclick="window.location.href='nuevoensayo.html'">
+                <span>Agregar Nuevo Ensayo</span>
+            </a>
+            <a id="ensayos-container" class="ensayos-lista"></a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Elenco de Danza Folklórica - UAC. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para mostrar el mensaje flotante
+        function mostrarMensaje() {
+            var mensaje = document.getElementById("mensajeFlotante");
+            mensaje.style.display = "block";  // Mostrar el mensaje
+        
+            // Ocultar el mensaje después de 3 segundos
+            setTimeout(function() {
+                mensaje.style.display = "none";
+            }, 3000);  // 3000 milisegundos = 3 segundos
+        }
+
+        // Cargar los ensayos desde el archivo PHP y mostrar el mensaje flotante
+        window.onload = function() {
+            // Cargar los ensayos desde el archivo PHP
+            fetch('controlador/mostrarensayo.php')
+                .then(response => response.text())
+                .then(data => {
+                    // Insertar los ensayos en el contenedor
+                    document.getElementById("ensayos-container").innerHTML = data;
+                    // Mostrar el mensaje flotante
+                    mostrarMensaje();
+                })
+                .catch(error => console.error('Error al cargar los ensayos:', error));
+
+            // Cargar los eventos desde el archivo PHP
+            fetch('controlador/mostrarevento.php')
+                .then(response => response.text())
+                .then(data => {
+                    // Insertar los eventos en el contenedor
+                    document.getElementById("eventos-container").innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar los eventos:', error));
+        };
+    </script>
+    </script>
+    
+</body>
+
+</html>

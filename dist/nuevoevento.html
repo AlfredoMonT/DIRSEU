@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="estilos/nuevoest.css">
+    <title>Nuevo Evento</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar / Menu Lateral -->
+        <div id="sidebar">
+            <div class="menu-icon">
+                <i class="fas fa-user"></i>
+                <p>Docente</p>
+            </div>
+        </div>
+        
+        <!-- Contenido principal -->
+        <div id="main-content">
+            <header>
+                <h1 class="title">Nuevo Evento</h1>
+                <button id="cerrar-sesion">Cerrar Sesión</button>
+            </header>
+
+            <form action="controlador/guardarevento.php" method="post" enctype="multipart/form-data">
+                <label for="nombre">Nombre del Evento:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="4"></textarea>
+
+                <label for="encargado">Encargado:</label>
+                <input type="text" id="encargado" name="encargado">
+
+                <label for="fecha">Fecha del Evento:</label>
+                <input type="date" id="fecha" name="fecha" required>
+
+                <label for="lugar">Lugar:</label>
+                <input type="text" id="lugar" name="lugar" required>
+
+                <div class="row">
+                    <div>
+                        <label for="hora_inicio">Hora de inicio:</label>
+                        <input type="time" id="hora_inicio" name="hora_inicio">
+                    </div>
+                    <div>
+                        <label for="hora_culminacion">Hora de culminación:</label>
+                        <input type="time" id="hora_culminacion" name="hora_culminacion">
+                    </div>
+                </div>
+
+                <label for="imagen">Imagen (opcional):</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*">
+
+                <div class="buttons">
+                    <button type="button" onclick="window.location.href='principal_docente.html'">REGRESAR</button>
+                    <button type="submit" class="save-btn">GUARDAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

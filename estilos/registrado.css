@@ -1,0 +1,131 @@
+/* Reset y Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.container {
+    display: flex;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+}
+
+.title {
+    font-size: 24px;
+}
+/* Estilos del Sidebar */
+#sidebar {
+    position: fixed;
+    left: 1;
+    top: 1;
+    width: 200px;
+    height: 150%;
+    background-color: #002e5d;
+    padding: 19px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sidebar .menu-icon {
+    color: white;
+    font-size: 100px;
+    margin-bottom: 20px;
+}
+
+#sidebar p {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 100px;
+}
+
+/* Main Content */
+#content {
+    display: flex;
+    width: 100%;
+    background-color: #f5f5f5;
+}
+
+/* Left Section: Datos Registrados */
+.left-section {
+    width: 80%;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.datos-registrados {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.datos-registrados h2 {
+    margin-bottom: 20px;
+    color: #0a3871;
+}
+
+.datos-registrados p {
+    font-size: 1.1rem;
+    margin: 8px 0;
+}
+
+/* Right Section: Gracias por su Inscripción */
+.right-section {
+    width: 50%;
+    background-color: white;
+    padding: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inscripcion {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inscripcion h2 {
+    color: #0a3871;
+    margin-bottom: 20px;
+}
+
+.inscripcion img {
+    width: 500px;
+    border-radius: 8px;
+}
+
+/* Logout Button */
+.logout {
+    margin-top: 20px;
+}
+
+#logout-button {
+    background-color: #0a3871;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#logout-button:hover {
+    background-color: #082a56;
+}
