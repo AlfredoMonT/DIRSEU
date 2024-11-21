@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="estilos/nuevoest.css">
+    <title>Nuevo Evento</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar / Menu Lateral -->
+        <div id="sidebar">
+            <div class="menu-icon">
+                <i class="fas fa-user"></i>
+                <p>Docente</p>
+            </div>
+        </div>
+        
+        <!-- Contenido principal -->
+        <div id="main-content">
+            <header>
+                <h1 class="title">Nuevo Evento</h1>
+                <button id="cerrar-sesion">Cerrar Sesión</button>
+            </header>
+
+            <form action="controlador/guardarevento.php" method="post" enctype="multipart/form-data">
+                <!-- Cambiar nombre a nombreEvento -->
+                <label for="nombreEvento">Nombre del Evento:</label>
+                <input type="text" id="nombreEvento" name="nombreEvento" required>
+
+                <!-- Incluir el campo de descripción -->
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="4"></textarea>
+
+                <!-- Cambiar encargado a idEncarEvento -->
+                <label for="idEncarEvento">Encargado:</label>
+                <input type="text" id="idEncarEvento" name="idEncarEvento">
+
+                <!-- Cambiar fecha a fechaIni -->
+                <label for="fechaIni">Fecha de Inicio:</label>
+                <input type="date" id="fechaIni" name="fechaIni" required>
+
+                <!-- Agregar fechaFin para la fecha de culminación -->
+                <label for="fechaFin">Fecha de Culminación:</label>
+                <input type="date" id="fechaFin" name="fechaFin">
+
+                <label for="lugar">Lugar:</label>
+                <input type="text" id="lugar" name="lugar" required>
+
+                <label for="imagen">Imagen (opcional):</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*">
+
+                <div class="buttons">
+                    <button type="button" onclick="window.location.href='principal_docente.html'">REGRESAR</button>
+                    <button type="submit" class="save-btn">GUARDAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

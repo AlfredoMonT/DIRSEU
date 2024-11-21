@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Iniciar sesión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="estilos/login.css"> 
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="header-container">
+        
+        <p class="header-title">Sistema de Asistencia -  Talleres</p>
+        <p class="header-title">DIRSEU</p>
+    </div>
+    
+    <div class="login-container">
+        <div class="header-container">
+            <div class="back-button">
+                <a href="index.html" class="logout-btn">
+                    <img src="./imagenes/flecha.png" alt="Regresar">
+                </a> 
+            </div>
+            <div>
+                <h2>Login</h2>
+            </div>
+        </div>
+
+        <form action="controlador/login.php" method="POST">
+            <input type="text" id="correo" name="correo" placeholder="Gmail" required>
+            <input type="password" id="contrasenia" name="contrasenia" placeholder="Password" required>
+            
+            <div class="message-container" id="error_message" style="display:none;"></div>
+        
+            <div class="button-row">
+                <br><button type="submit" name="role" value="alumno">Iniciar Sesión</button>
+            </div>
+        </form>
+        
+        <div class="forgot-password">
+            <br><a href="#">¿Olvidaste tu contraseña?</a>
+        </div>
+    </div>
+</body>
+</html>
